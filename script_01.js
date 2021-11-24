@@ -14,11 +14,38 @@
 // mögliche Tests:
 // output(getSentence(["Ich","bin","Max"],"S"));
 // output(getSentence(["Bist","du","Max"],"Q"));
-
+output(getSentence(["I","am","the","Future"]))
+output(getSentence(["Are","you","the","Future"],"S"));
+output(getSentence(["Yes","I","am"],"Q"));
 function getSentence(arr,op){
-	
-	// ....
-	
+	const gap         = " ";
+    let str           = "";
+
+    for (let i = 0; i < arr.length; i++) 
+    {
+       str += arr[i];
+
+       if(i < arr.length -1)
+       {
+           str += gap;
+       }
+       
+    }
+    str += marks(op);
+    return str;	
+}
+
+function marks(op) {
+    if (op == "S")
+    {
+        return "?";
+    }else if(op == "Q")
+    {
+        return "!";
+    }else
+    {
+        return ".";
+    }
 }
 
 // Modul: Ausgabe in Konsole : Test
